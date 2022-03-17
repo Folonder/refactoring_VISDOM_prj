@@ -12,8 +12,9 @@ pi_data = {
 
 async def start_client():
     global pi_data
+    url = 'wss://fathomless-plateau-34690.herokuapp.com/'
     # url = 'wss://visdom-ws-server.herokuapp.com/'
-    url = 'ws://127.0.0.1:1234'
+    # url = 'ws://127.0.0.1:1234'
     async with websockets.connect(url) as websocket:
         pi_data = json.dumps(pi_data)
         await websocket.send(pi_data)
