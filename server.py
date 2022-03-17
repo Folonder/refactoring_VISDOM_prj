@@ -118,8 +118,8 @@ class Server:
 
 
 if __name__ == '__main__':
-    port = 1234
-    # port = os.environ['PORT']
+    # port = 1234
+    port = int(os.environ['PORT'])
     server = Server(port=port)
     asyncio.get_event_loop().run_until_complete(server.start())
     asyncio.get_event_loop().run_forever()
